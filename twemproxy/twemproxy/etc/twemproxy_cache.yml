@@ -1,0 +1,14 @@
+redis-cache-abc:
+  listen: 0.0.0.0:6501
+  hash: fnv1a_64
+  distribution: ketama
+  timeout: 1000
+  preconnect: true
+  redis: true
+  server_connections: 1
+  auto_eject_hosts: true
+  server_retry_timeout: 30000
+  server_failure_limit: 2
+  servers:
+    - 192.168.0.123:6300:1 redis-d042
+    - 192.168.0.123:6301:1 redis-d042

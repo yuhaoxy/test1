@@ -1,0 +1,12 @@
+redis-db:
+  listen: 0.0.0.0:6400
+  hash: fnv1a_64
+  distribution: ketama
+  timeout: 1000
+  preconnect: true
+  redis: true
+  server_connections: 1
+  auto_eject_hosts: false
+  servers:
+    - redis-16:6300:1 redis-redis-16-00
+    - redis-16:6301:1 redis-redis-16-01
